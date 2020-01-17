@@ -412,11 +412,6 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
   @Input() summaryPosition: string = 'top';
 
   /**
-   * A property enable/disable of dragging row.
-   */
-  @Input() isDrag: boolean = false;
-
-  /**
    * Body was scrolled typically in a `scrollbarV:true` scenario.
    */
   @Output() scroll: EventEmitter<any> = new EventEmitter();

@@ -24,7 +24,7 @@ import { translateXY } from '../../utils/translate';
   selector: 'datatable-body-row',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div
+    <div [draggable]="isDrag" (dragstart)="onDragStart($event)"
       *ngFor="let colGroup of _columnsByPin; let i = index; trackBy: trackByGroups"
       class="datatable-row-{{ colGroup.type }} datatable-row-group"
       [ngStyle]="_groupStyles[colGroup.type]"
@@ -82,6 +82,8 @@ export class DataTableBodyRowComponent implements DoCheck {
   @Input() rowIndex: number;
   @Input() displayCheck: any;
   @Input() treeStatus: TreeStatus = 'collapsed';
+  // add isDrag flag.
+  @Input() isDrag: boolean;
 
   @Input()
   set offsetX(val: number) {
@@ -250,5 +252,13 @@ export class DataTableBodyRowComponent implements DoCheck {
 
   onTreeAction() {
     this.treeAction.emit();
+  }
+
+  /** Drag and drop */
+  onDragStart(event: any): void {
+    if (this.isDrag === true && this.row != null) {
+      var rowString = JSON.stringify(this.row);
+      event.dataTransfer.setData('text', rowString);
+    }
   }
 }

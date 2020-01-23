@@ -77,6 +77,7 @@ import { translateXY } from '../../utils/translate';
             [rowClass]="rowClass"
             [displayCheck]="displayCheck"
             [treeStatus]="group.treeStatus"
+            [isDrag]="isDrag"
             (treeAction)="onTreeAction(group)"
             (activate)="selector.onActivate($event, indexes.first + i)"
           >

@@ -145,6 +145,8 @@ export class DataTableBodyComponent implements OnInit, OnDestroy {
   @Input() summaryRow: boolean;
   @Input() summaryPosition: string;
   @Input() summaryHeight: number;
+  // add isDrag flag.
+  @Input() isDrag: boolean;
 
   @Input() set pageSize(val: number) {
     this._pageSize = val;

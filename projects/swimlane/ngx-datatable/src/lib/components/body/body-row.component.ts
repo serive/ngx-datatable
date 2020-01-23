@@ -257,7 +257,7 @@ export class DataTableBodyRowComponent implements DoCheck {
   /** Drag and drop */
   onDragStart(event: any): void {
     if (this.isDrag === true && this.row != null) {
-      var rowString = JSON.stringify(this.row);
+      const rowString = JSON.stringify(this.row);
       event.dataTransfer.setData('text', rowString);
     }
   }

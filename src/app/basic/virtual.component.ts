@@ -5,7 +5,7 @@ import { ColumnMode } from 'projects/swimlane/ngx-datatable/src/public-api';
   selector: 'virtual-scroll-demo',
   template: `
     <div>
-      <h3>
+      <h3 (drop)="ondrop($event)" (dragover)="allowDrop($event)" >
         Virtual Scrolling with 10k Rows
         <small>
           <a
@@ -24,6 +24,7 @@ import { ColumnMode } from 'projects/swimlane/ngx-datatable/src/public-api';
         footerHeight="50"
         [rowHeight]="getRowHeight"
         [scrollbarV]="true"
+        [isDrag]="true"
         (page)="onPage($event)"
       >
         <ngx-datatable-column name="Name" width="300">
@@ -80,5 +81,15 @@ export class VirtualScrollComponent {
 
   getRowHeight(row) {
     return row.height;
+  }
+
+  // HTML5 drag and drop sample.
+  allowDrop(event): void {
+    event.preventDefault();
+  }
+  ondrop(event): void {
+    event.preventDefault();
+    const text = event.dataTransfer.getData("text");
+    alert(text);
   }
 }

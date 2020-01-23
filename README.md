@@ -36,7 +36,38 @@ npm i @serive/ngx-datatable --save
 ```
 
 ## How to use it.
+1. Set isDrag flag in ngx-datatable tag.
+```HTML
+<ngx-datatable
+  class="material"
+  [rows]="rows"
+  headerHeight="50"
+  footerHeight="50"
+  [scrollbarV]="true"
+  [isDrag]="true"
+></ngx-datatable>
+```
 
+2. Add "drop" event and "dragover" event as followings.
+
+Drop target.
+```HTML
+<h3 (drop)="ondrop($event)" (dragover)="allowDrop($event)" ></h3>
+```
+
+Add Component.ts
+```ts
+  // Allow drop event for cancel dragover event.
+  allowDrop(event): void {
+    event.preventDefault();
+  }
+  // Allow drop event and get data for target row.
+  ondrop(event): void {
+    event.preventDefault();
+    const text = event.dataTransfer.getData("text");
+    alert(text); // Please replace for your code.
+  }
+```
 
 ## Credits
 

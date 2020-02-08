@@ -1,7 +1,7 @@
 {
-  "name": "@swimlane/ngx-datatable",
-  "version": "16.0.3",
-  "description": "ngx-datatable is an Angular table grid component for presenting large and complex data.",
+  "name": "@serive/ngx-datatable",
+  "version": "0.0.1",
+  "description": "This is temporary library of an Angular table grid component. Fork from @swimline/ngx-datatable and add feature of drag and drop.",
   "peerDependencies": {
     "@angular/common": "<9.0.0",
     "@angular/core": "<9.0.0",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swimlane/ngx-datatable.git"
+    "url": "git+https://github.com/serive/ngx-datatable.git"
   },
   "keywords": [
     "angularjs",
@@ -20,10 +20,9 @@
     "grid",
     "table"
   ],
-  "author": "Swimlane",
+  "author": "serive",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/swimlane/ngx-datatable/issues"
-  },
-  "homepage": "https://github.com/swimlane/ngx-datatable#readme"
+    "url": "https://github.com/serive/ngx-datatable.git"
+  }
 }

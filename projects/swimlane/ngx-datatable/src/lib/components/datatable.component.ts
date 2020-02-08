@@ -850,11 +850,13 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
    *
    */
   recalculateDims(): void {
-    const dims = this.dimensionsHelper.getDimensions(this.element);
-    this._innerWidth = Math.floor(dims.width);
+    //const dims = this.dimensionsHelper.getDimensions(this.element);
+    let offsetWidth = this.element.offsetWidth;
+    let offsetHeight = this.element.offsetHeight;
+    this._innerWidth = Math.floor(offsetWidth);
 
     if (this.scrollbarV) {
-      let height = dims.height;
+      let height = offsetHeight;
       if (this.headerHeight) height = height - this.headerHeight;
       if (this.footerHeight) height = height - this.footerHeight;
       this.bodyHeight = height;

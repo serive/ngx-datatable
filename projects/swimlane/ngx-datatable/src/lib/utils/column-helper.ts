@@ -100,6 +100,10 @@ export function translateTemplates(templates: DataTableColumnDirective[]): any[]
       col.cellTemplate = temp.cellTemplate;
     }
 
+    if (temp.treeToggleTemplate) {
+      col.treeToggleTemplate = temp.treeToggleTemplate;
+    }    
+
     if (temp.summaryFunc) {
       col.summaryFunc = temp.summaryFunc;
     }

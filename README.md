@@ -26,6 +26,10 @@ this project is fork from @swimlane/ngx-datatable because of Add drag and drop f
 - AoT Compilation Support
 - Universal Support
 
+## Add bug fix from @serive
+- Fix for not correct height and width when use mat dialog.
+- Fix for not redraw when call recalculate method.
+
 ## Installation
 
 To use ngx-datatable in your project install it via [npm](https://www.npmjs.com/package/@serive
